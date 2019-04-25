@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>CadastrdoDeClientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="cadastrar()">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input FormControlName="nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input FormControlName="telefone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input  FormControlName="email"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" fill="autline">Cadastrar</ion-button>
+  </form>
+
+</ion-content>
