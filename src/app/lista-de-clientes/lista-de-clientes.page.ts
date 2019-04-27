@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../model/cliente';
 import * as firebase from 'firebase';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-de-clientes',
@@ -13,10 +14,15 @@ export class ListaDeClientesPage {
   firestore = firebase.firestore();
   settings = {timestampsInSnapshots: true};
 
-  constructor() { }
+  constructor(public router : Router) { }
 
   ngOnInit() {
-   this.getList();
+    this.listaDeClientes = [];
+    this.getList();
+  }
+
+  viewcliente(obj : Cliente){
+    this.router.navigate(['/cliente-view', {cliente: obj.id}]);
   }
 
   getList() {
@@ -32,5 +38,16 @@ export class ListaDeClientesPage {
         console.log(this.listaDeClientes);
     });
 
+  }
+
+  remove(obj : Cliente){
+    var ref = firebase.firestore().collection("cliente");
+    ref.doc(obj.id).delete()
+      .then(()=>{
+        this.listaDeClientes = [];
+        this.getList();
+      }).catch(()=>{
+        console.log('Erro ao atualizar');
+      })
   }
 }

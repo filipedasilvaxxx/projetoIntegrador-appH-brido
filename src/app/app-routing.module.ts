@@ -25,7 +25,8 @@ const routes: Routes = [
   },
   { path: 'cadastrdo-de-clientes', 
   loadChildren: './cadastrdo-de-clientes/cadastrdo-de-clientes.module#CadastrdoDeClientesPageModule'
- }
+ },  { path: 'cliente-view', loadChildren: './cliente-view/cliente-view.module#ClienteViewPageModule' }
+
 
 
 ];

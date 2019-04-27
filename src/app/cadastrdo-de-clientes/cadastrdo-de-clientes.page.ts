@@ -19,9 +19,9 @@ export class CadastrdoDeClientesPage implements OnInit {
               public router : Router) {
     
     this.formGroup = this.formBuilder.group({
-      nome : [''],
-      telefone : [''],
-      email : [''],
+      nome: [''],
+      telefone: [''],
+      email: [''],
     })
    }
 
@@ -33,7 +33,7 @@ export class CadastrdoDeClientesPage implements OnInit {
     ref.add(this.formGroup.value)
       .then(() =>{
         console.log('Cadastrado com sucesso');
-        this.router.navigate(['/list']);
+        this.router.navigate(['/lista-de-clientes']);
       }).catch(()=>{
         console.log('Erro ao cadastrar');
       })
