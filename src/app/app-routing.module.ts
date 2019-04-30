@@ -12,11 +12,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
   },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule', 
-    canActivate: [Auth2Guard]
-  },
+  
   { path: 'logoff', loadChildren: './logoff/logoff.module#LogoffPageModule', 
     canActivate: [Auth2Guard] 
   },
@@ -25,7 +21,20 @@ const routes: Routes = [
   },
   { path: 'cadastrdo-de-clientes', 
   loadChildren: './cadastrdo-de-clientes/cadastrdo-de-clientes.module#CadastrdoDeClientesPageModule'
- },  { path: 'cliente-view', loadChildren: './cliente-view/cliente-view.module#ClienteViewPageModule' }
+ },
+  { path: 'cliente-view', 
+  loadChildren: './cliente-view/cliente-view.module#ClienteViewPageModule' },
+  
+  { path: 'lista-de-mensagem', 
+  loadChildren: './lista-de-mensagem/lista-de-mensagem.module#ListaDeMensagemPageModule' },
+  
+  { path: 'cadastro-de-mensagem', 
+  loadChildren: './cadastro-de-mensagem/cadastro-de-mensagem.module#CadastroDeMensagemPageModule' },
+  
+  { path: 'mensagem-view', 
+  loadChildren: './mensagem-view/mensagem-view.module#MensagemViewPageModule' }
+
+
 
 
 

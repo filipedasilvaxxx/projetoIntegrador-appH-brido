@@ -1,44 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../model/cliente';
 import * as firebase from 'firebase';
+import { Mensagem } from '../model/mensagem';
 import { Router } from '@angular/router';
 import { LoadingController, ToastController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-lista-de-clientes',
-  templateUrl: './lista-de-clientes.page.html',
-  styleUrls: ['./lista-de-clientes.page.scss'],
+  selector: 'app-lista-de-mensagem',
+  templateUrl: './lista-de-mensagem.page.html',
+  styleUrls: ['./lista-de-mensagem.page.scss'],
 })
-export class ListaDeClientesPage {
+export class ListaDeMensagemPage implements OnInit {
 
-  listaDeClientes : Cliente[] = [];
+  listaDeMensagem : Mensagem[] = [];
   firestore = firebase.firestore();
   settings = {timestampsInSnapshots: true};
 
   constructor(public router : Router,
               public loadingController: LoadingController,
-              public toastController: ToastController){
-    
-  }
+              public toastController: ToastController) { }
 
   ngOnInit() {
     this.getList();
   }
 
-  viewcliente(obj : Cliente){
-    this.router.navigate(['/cliente-view', {cliente: obj.id}]);
+  viewMensagem(obj : Mensagem){
+    this.router.navigate(['/mensagem-view', {mensagem: obj.id}]);
   }
 
   getList() {
     this.loading();
 
-    var ref = firebase.firestore().collection("cliente");
+    var ref = firebase.firestore().collection("mensagem");
     ref.get().then(query => {
         query.forEach(doc => {
-            let c = new Cliente();
+            let c = new Mensagem();
             c.setDados(doc.data());
             c.id = doc.id;
-            this.listaDeClientes.push(c);
+            this.listaDeMensagem.push(c);
         });
        
         this.loadingController.dismiss();
@@ -46,11 +44,11 @@ export class ListaDeClientesPage {
 
   }
 
-  remove(obj : Cliente){
-    var ref = firebase.firestore().collection("cliente");
+  remove(obj : Mensagem){
+    var ref = firebase.firestore().collection("mensagem");
     ref.doc(obj.id).delete()
       .then(()=>{
-        this.listaDeClientes = [];
+        this.listaDeMensagem = [];
         this.getList();
       }).catch(()=>{
         console.log('Erro ao atualizar');
@@ -66,5 +64,4 @@ export class ListaDeClientesPage {
       await loading.present();
     }
     
-  
 }

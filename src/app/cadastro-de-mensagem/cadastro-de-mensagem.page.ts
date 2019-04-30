@@ -1,32 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import * as firebase from 'firebase';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoadingController, ToastController } from '@ionic/angular';
+import { FormGroup } from '@angular/forms';
+import * as firebase from 'firebase';
 
 @Component({
-  selector: 'app-cadastrdo-de-clientes',
-  templateUrl: './cadastrdo-de-clientes.page.html',
-  styleUrls: ['./cadastrdo-de-clientes.page.scss'],
+  selector: 'app-cadastro-de-mensagem',
+  templateUrl: './cadastro-de-mensagem.page.html',
+  styleUrls: ['./cadastro-de-mensagem.page.scss'],
 })
-export class CadastrdoDeClientesPage implements OnInit {
+export class CadastroDeMensagemPage implements OnInit {
 
-  
   firestore = firebase.firestore();
   settings = {timestampsInSnapshots: true};
   formGroup : FormGroup;
-
+  
   constructor(public formBuilder : FormBuilder,
               public router : Router,
               public loadingController: LoadingController,
-              public toastController: ToastController) {
-    
-    this.formGroup = this.formBuilder.group({
-      nome: [''],
-      telefone: [''],
-      email: [''],
-    })
-   }
+              public toastController: ToastController) { 
+                this.formGroup = this.formBuilder.group({
+                  titulo: [''],
+                  texto: [''],
+                  data: [''],
+                })                
+}
 
   ngOnInit() {
   }
@@ -34,11 +33,11 @@ export class CadastrdoDeClientesPage implements OnInit {
   cadastrar(){
     this.loading();
 
-    let ref = this.firestore.collection('cliente')
+    let ref = this.firestore.collection('mensagem')
     ref.add(this.formGroup.value)
       .then(() =>{
         console.log('Cadastrado com sucesso');
-        this.router.navigate(['/lista-de-clientes']);
+        this.router.navigate(['/lista-de-mensagem']);
         this.loadingController.dismiss();
         this.toast('Atualizado com sucesso');
       }).catch(()=>{
@@ -66,4 +65,3 @@ export class CadastrdoDeClientesPage implements OnInit {
     toast.present();
   }
 }
-
