@@ -5,7 +5,7 @@ import { Auth2Guard } from './service/auth2.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'lista-de-clientes',
     pathMatch: 'full'
   },
   {

@@ -20,6 +20,11 @@ export class ListaDeClientesPage {
               public toastController: ToastController){
     
   }
+  
+  slideOpts = {
+    initialSlide: 1,
+    speed: 400
+  };
 
   ngOnInit() {
     this.getList();
