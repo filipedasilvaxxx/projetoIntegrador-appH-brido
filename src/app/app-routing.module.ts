@@ -32,7 +32,8 @@ const routes: Routes = [
   loadChildren: './cadastro-de-mensagem/cadastro-de-mensagem.module#CadastroDeMensagemPageModule' },
   
   { path: 'mensagem-view', 
-  loadChildren: './mensagem-view/mensagem-view.module#MensagemViewPageModule' }
+  loadChildren: './mensagem-view/mensagem-view.module#MensagemViewPageModule' },  { path: 'cadastro-loja', loadChildren: './cadastro-loja/cadastro-loja.module#CadastroLojaPageModule' }
+
 
 
 

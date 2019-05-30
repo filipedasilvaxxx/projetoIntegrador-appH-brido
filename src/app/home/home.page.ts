@@ -41,4 +41,9 @@ export class HomePage {
     })
 
   }
+
+  cadastrarLoja(){
+  this.router.navigate(['/cadastro-loja']);
+
+  }
 }
