@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class HomePage {
 
 
     constructor(public router : Router,
-                public fire : AngularFireAuth ){
+                public fire : AngularFireAuth,
+                private menu: MenuController ){
 
     }
 
@@ -45,5 +47,10 @@ export class HomePage {
   cadastrarLoja(){
   this.router.navigate(['/cadastro-loja']);
 
+  }
+
+  openFirst() {
+    this.menu.enable(true, 'first');
+    this.menu.open('first');
   }
 }

@@ -35,7 +35,8 @@ const routes: Routes = [
   loadChildren: './mensagem-view/mensagem-view.module#MensagemViewPageModule' },
   
   { path: 'cadastro-loja', 
-  loadChildren: './cadastro-loja/cadastro-loja.module#CadastroLojaPageModule' },  { path: 'loja-perfil', loadChildren: './loja-perfil/loja-perfil.module#LojaPerfilPageModule' }
+  loadChildren: './cadastro-loja/cadastro-loja.module#CadastroLojaPageModule' },  { path: 'loja-perfil', loadChildren: './loja-perfil/loja-perfil.module#LojaPerfilPageModule' },
+  { path: 'bcaa-list', loadChildren: './bcaa-list/bcaa-list.module#BcaaListPageModule' }
 
 
 
