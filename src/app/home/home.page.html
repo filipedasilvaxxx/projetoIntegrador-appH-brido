@@ -1,25 +1,37 @@
 <ion-header>
   <ion-toolbar>
-
-    <ion-title>
-    Login
-    </ion-title>
+    
+    <ion-img style="width: 60px; height: 60px;" src="../assets/1.png"></ion-img>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label position="floating">E-mail</ion-label>
-    <ion-input #email></ion-input>
-  </ion-item>
+  
+  <ion-slides pager="true" style="width: 200px; height: 200px;" [options]="slideOpts">
+    <ion-slide>
+      <ion-img src="../assets/2.png"></ion-img>
+    </ion-slide>
+    <ion-slide>
+      <ion-img src="../assets/3.png"></ion-img>
+    </ion-slide>
+    <ion-slide>
+      <ion-img src="../assets/4.png"></ion-img>
+    </ion-slide>
+  </ion-slides>
 
-  <ion-item>
-    <ion-label position="floating"  >Senha</ion-label>
-    <ion-input type="password" #senha></ion-input>
-  </ion-item>
+  <ion-searchbar></ion-searchbar>
 
-  <ion-button expand="full" (click)="logar()">Logar</ion-button>
-  <ion-button expand="full" fill="autline" (click)="cadastrar()">Cadastrar</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        ion-col
+      </ion-col>
+      <ion-col>
+        ion-col
+      </ion-col>
+     
+    </ion-row>
+  </ion-grid>
 
 
 </ion-content>

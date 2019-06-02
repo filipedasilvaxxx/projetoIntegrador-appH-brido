@@ -3,6 +3,7 @@ import { ViewChild } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -12,6 +13,7 @@ export class HomePage {
 
   @ViewChild('email') email;
   @ViewChild('senha') senha;
+
 
     constructor(public router : Router,
                 public fire : AngularFireAuth ){
