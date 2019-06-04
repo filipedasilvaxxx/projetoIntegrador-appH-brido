@@ -1,9 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-img style="width: 60px; height: 60px;" src="../assets/1.png"></ion-img>
-    <h5 (click)="cadastrarLoja()">Cadastre sua Loja</h5>
-    <div text-center [ngClass]="highlight-color:text==1" (click)="setSelectedText('text1')"> 
-     Loja <div text-center [ngClass]="highlight-color:text==2" 
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    <ion-img style="width: 60px; height: 60px;" src="../assets/1.png"></ion-img> 
+     
+    
+
   </ion-toolbar>
 </ion-header>
 
@@ -37,6 +40,8 @@
       </ion-card>
     </ion-col>
     </ion-row>
+
+    
 
 
 </ion-content>

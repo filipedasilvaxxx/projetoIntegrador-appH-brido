@@ -23,25 +23,11 @@ export class AppComponent {
       icon: 'logoff'
     },
     {
-    title: 'ListaDeClientes',
-    url: '/lista-de-clientes',
-    icon: 'body'
+      title: 'Cadastre sua loja',
+      url: '/cadastro-loja',
+      icon: 'shop'
     },
-    {
-      title: 'Cadastro de Clientes',
-      url: '/cadastrdo-de-clientes',
-      icon: 'book'
-    },
-    {
-      title: 'Lista de Mensagem',
-      url: '/lista-de-mensagem',
-      icon: 'book'
-    },
-    {
-      title: 'Cadastro de Mensagem',
-      url: '/cadastro-de-mensagem',
-      icon: 'book'
-    },
+    
 
   ];
 

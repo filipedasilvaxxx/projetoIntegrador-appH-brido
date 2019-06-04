@@ -32,7 +32,11 @@ const routes: Routes = [
   loadChildren: './cadastro-de-mensagem/cadastro-de-mensagem.module#CadastroDeMensagemPageModule' },
   
   { path: 'mensagem-view', 
-  loadChildren: './mensagem-view/mensagem-view.module#MensagemViewPageModule' },  { path: 'cadastro-loja', loadChildren: './cadastro-loja/cadastro-loja.module#CadastroLojaPageModule' }
+  loadChildren: './mensagem-view/mensagem-view.module#MensagemViewPageModule' },
+  
+  { path: 'cadastro-loja', 
+  loadChildren: './cadastro-loja/cadastro-loja.module#CadastroLojaPageModule' },  { path: 'loja-perfil', loadChildren: './loja-perfil/loja-perfil.module#LojaPerfilPageModule' }
+
 
 
 
